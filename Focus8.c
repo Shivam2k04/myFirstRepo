@@ -8,19 +8,19 @@
   specified directory name where file is created and lastly file name.
 */
 
-// standard input output header file
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
-// Disables fopen function warning
+
 #pragma warning(disable: 4996)
 
 // function definition of struct that contains command line arguements
 struct MyData
 {
 	int howMany;
-	char theText[21];
+	char text[21];
 	char directoryPath[21];
 	char filename[21];
 };
@@ -76,7 +76,7 @@ int main(int argc, char* argv[])
 	// number of repetitions from first argument and storing it in myArgs.howMany
 	myArgs.howMany = atoi(argv[1]);
 	// copying string from second argument into myArgs.theText
-	strcpy(myArgs.theText, argv[2]);
+	strcpy(myArgs.text, argv[2]);
 	// copying directory path from third argument into myArgs.directoryPath
 	strcpy(myArgs.directoryPath, argv[3]);
 	// copying file name from fourth argument  into myArgs.filename
@@ -111,7 +111,7 @@ int main(int argc, char* argv[])
 		if (fp)
 		{
 			// writing string in text file
-			fprintf(fp, "%s\n", myArgs.theText);
+			fprintf(fp, "%s\n", myArgs.text);
 		}
 
 	}
